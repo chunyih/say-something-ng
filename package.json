@@ -1,7 +1,10 @@
 {
   "name": "ngyo",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "gzippo": "~0.2.0",
+    "express": "~4.0.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
@@ -30,7 +33,8 @@
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-ng-scenario": "~0.1.0",
     "karma": "~0.12.9",
-    "grunt-karma": "~0.8.2"
+    "grunt-karma": "~0.8.2",
+    "grunt-http": "~1.3.1"
   },
   "engines": {
     "node": ">=0.10.0"
