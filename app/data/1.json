@@ -1,1 +1,5 @@
-{"name": "hi"}
+[
+{"name": "John", "text": "hihi", "time": "9:15:59 4/25/2014", "isLoad": false},
+{"name": "Tom", "text": "hoho", "time": "9:16:59 4/25/2014", "isLoad": false},
+{"name": "Amy", "text": "haha", "time": "9:17:59 4/25/2014", "isLoad": false}
+]

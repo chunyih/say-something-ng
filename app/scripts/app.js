@@ -1,19 +1,18 @@
 'use strict';
 
-angular
-  .module('ngyoApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute'
-  ])
+var ngyoApp = angular
+  .module('ngyoApp', ['ngCookies', 'ngResource', 'ngSanitize', 'ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+      .when('/', {templateUrl: 'views/main.html', controller: 'mainCtrl'})
+      .otherwise({redirectTo: '/'});
   });
+
+
+
+
+
+
+
+
+
