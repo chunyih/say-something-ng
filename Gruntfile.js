@@ -9,6 +9,8 @@
 
 module.exports = function (grunt) {
 
+  grunt.loadNpmTasks('grunt-json-minify');
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -344,6 +346,13 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
+    },
+
+    // Json minify
+    'json-minify': {
+      build: {
+        files: '<%= yeoman.app %>/data/{,*/}*.json'
+      }
     }
   });
 
@@ -390,7 +399,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'json-minify'
   ]);
 
   grunt.registerTask('default', [
