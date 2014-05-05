@@ -9,7 +9,7 @@
 
 module.exports = function (grunt) {
 
-  grunt.loadNpmTasks('grunt-json-minify');
+  grunt.loadNpmTasks('grunt-json-minify'); // Added, for json minify
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -282,7 +282,8 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            'data/{,*/}*.json' // added, include json files in data folder
           ]
         }, {
           expand: true,
@@ -348,7 +349,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Json minify
+    // Added, for json minify
     'json-minify': {
       build: {
         files: '<%= yeoman.app %>/data/{,*/}*.json'
