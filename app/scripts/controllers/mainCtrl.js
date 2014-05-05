@@ -15,6 +15,7 @@ ngyoApp.factory('personList', [function() {
 ngyoApp.controller('mainCtrl', ['$scope', 'chatData', 'personList', function($scope, chatData, personList) {
   var person, prePerson;
   
+  // Load json data
   chatData.query({id:1}).$promise.then(
     function(event) {
       $scope.chatData = event;
@@ -56,7 +57,6 @@ ngyoApp.directive('chatForm', ['$compile', 'personList', 'chatData', function($c
         
         // Append chat content
         text = scope.chatInput;
-
         scope.chatData.push({"name": person, "text": text, "time": timeStr, "isLoad": false});
 
         // Clear chat input
@@ -66,8 +66,8 @@ ngyoApp.directive('chatForm', ['$compile', 'personList', 'chatData', function($c
         // Scroll to bottom
         angular.element("div.jumbotron").scrollTop($('div.chatContent').height());
 
+        // Apply animation and chage load status
         scope.$apply(angular.element('div.chatContent p').last().animate({opacity: 1}, 500));
-        
         scope.chatData[scope.chatData.length-1].isLoad = true;
 
         //chatData.save({id:1});
